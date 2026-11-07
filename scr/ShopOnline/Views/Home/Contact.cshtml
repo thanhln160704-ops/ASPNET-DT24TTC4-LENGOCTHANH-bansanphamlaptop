@@ -1,0 +1,174 @@
+﻿@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_LayoutPublicPage.cshtml";
+}
+
+<style>
+    :root {
+        --bg-dark: #1e293b; 
+        --bg-card: #334155;
+        --text-main: #f8fafc;
+        --text-muted: #cbd5e1;
+        --accent: #00f0ff; 
+        --accent-hover: #00c3d0;
+        --danger: #ff3366;
+    }
+    
+    body, .spad, .contact {
+        background-color: var(--bg-dark) !important;
+        color: var(--text-main) !important;
+    }
+
+    div, section, article {
+        background-color: transparent;
+    }
+
+    /* Tiêu đề & Nội dung Text */
+    .section-title span { color: var(--accent) !important; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;}
+    .section-title h2 { color: #ffffff !important; }
+    .contact__text p { color: var(--text-muted) !important; line-height: 1.8; margin-bottom: 30px;}
+    
+    .contact__text ul li { margin-bottom: 25px; }
+    .contact__text ul li h4 { color: #ffffff !important; font-size: 1.2rem; margin-bottom: 10px; font-weight: 700;}
+    .contact__text ul li p { color: var(--text-muted) !important; line-height: 1.6;}
+
+    /* Styling cho Form Nhập liệu nền tối */
+    .contact__form input, 
+    .contact__form textarea {
+        background-color: var(--bg-card) !important;
+        color: #ffffff !important;
+        border: 1px solid #475569 !important;
+        border-radius: 5px;
+        padding: 15px;
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+    
+    .contact__form input::placeholder, 
+    .contact__form textarea::placeholder {
+        color: #94a3b8 !important;
+    }
+
+    .contact__form input:focus, 
+    .contact__form textarea:focus {
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        outline: none;
+    }
+
+    /* Style cho form message (Lỗi validate) */
+    .form-message {
+        color: var(--danger);
+        font-size: 0.9rem;
+        display: block;
+        margin-top: 5px;
+    }
+
+    /* Nút Submit phong cách Cyber */
+    .site-btn {
+        background: transparent !important;
+        color: var(--accent) !important;
+        border: 2px solid var(--accent) !important;
+        padding: 14px 35px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .site-btn:hover {
+        background: var(--accent) !important;
+        color: #000 !important;
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    }
+</style>
+
+<script>
+    var obj = document.querySelector(".navlist li:nth-child(1)");
+    var obj2 = document.querySelector(".navlist li:nth-of-type(5)");
+    if(obj) obj.classList.remove("active");
+    if(obj2) obj2.classList.add("active");
+</script>
+
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="contact__text">
+                    <div class="section-title">
+                        <span>Hỗ Trợ 24/7</span>
+                        <h2>Liên Hệ Với Chúng Tôi</h2>
+                        <p>
+                            Bạn cần tư vấn mua Laptop, hỗ trợ kỹ thuật, hay có thắc mắc về chính sách bảo hành? Hãy để lại thông tin hoặc liên hệ trực tiếp với Lê Ngọc Thanh Laptop qua các địa chỉ bên dưới. Chúng tôi luôn sẵn sàng hỗ trợ bạn.
+                        </p>
+                    </div>
+                    <ul>
+                        <li>
+                            <h4>Trụ Sở Chính Hồ Chí Minh</h4>
+                            <p>Tòa nhà Bitexco, Số 2 Hải Triều, Quận 1, TP.HCM <br />Hotline: 1900 1234 - Phím 1 (Kinh doanh)</p>
+                        </li>
+                        <li>
+                            <h4>Chi Nhánh Hà Nội</h4>
+                            <p>Tòa nhà Lotte Center, 54 Liễu Giai, Ba Đình, Hà Nội <br />Hotline: 1900 1234 - Phím 2 (Kỹ thuật & Bảo hành)</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                @if (ViewBag.MessageSuccess != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="background-color: rgba(40, 167, 69, 0.2); border-color: #28a745; color: #28a745; border-radius: 5px;">
+                        <strong>@ViewBag.MessageSuccess</strong> 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="color: #28a745; text-shadow: none;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
+                
+                <div class="contact__form">
+                    @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @id = "form-1" }))
+                    {
+                         @Html.AntiForgeryToken()
+                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="row">
+                            <div class="col-lg-6 form-group">
+                                <input type="text" placeholder="Họ và Tên" name="name" id="name">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <input type="text" placeholder="Địa chỉ Email" name="email" id="email">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <textarea placeholder="Nội dung cần tư vấn / Hỗ trợ kỹ thuật..." name="message" id="message" rows="5"></textarea>
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="col-lg-12 form-group mt-3">
+                                <button type="submit" class="site-btn">Gửi Yêu Cầu</button>
+                            </div>
+                        </div>
+                     }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Content/js/validator.js"></script>
+<script>
+    Validator({
+        form: '#form-1',
+        formGroupSelector: '.form-group',
+        errorSelector: '.form-message',
+        rules: [
+            Validator.isRequired('#name', 'Vui lòng nhập họ và tên'),
+            Validator.isEmail('#email', 'Vui lòng nhập email hợp lệ'),
+            Validator.isRequired('#message', 'Vui lòng nhập nội dung tin nhắn'),
+        ],
+    });
+</script>

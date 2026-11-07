@@ -1,0 +1,215 @@
+﻿@{
+    ViewBag.Title = "Trang Chủ";
+    Layout = "~/Views/Shared/_LayoutPublicPage.cshtml";
+}
+
+<style>
+:root {
+    --bg-dark: #020617;
+    --bg-light: #0ea5e9;
+    --card: rgba(255,255,255,0.08);
+    --main: #00eaff;
+    --text: #ffffff;
+    --sub: #cbd5e1;
+}
+
+/* ===== GLOBAL ===== */
+body {
+    background: radial-gradient(circle at top, #0ea5e9, #020617);
+    color: var(--text);
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8') center/cover;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.7), #020617);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 0 0 25px var(--main);
+}
+
+.hero p {
+    margin: 20px 0;
+    color: var(--sub);
+    font-size: 1.2rem;
+}
+
+.btn-main {
+    padding: 14px 40px;
+    border-radius: 50px;
+    border: 2px solid var(--main);
+    color: var(--main);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: var(--main);
+    color: #000;
+    box-shadow: 0 0 30px var(--main);
+}
+
+/* ===== FEATURE ===== */
+.feature {
+    padding: 80px 0;
+}
+
+.feature-card {
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(0,234,255,0.3);
+    transition: 0.4s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 40px rgba(0,234,255,0.4);
+}
+
+.feature-card h3 {
+    color: var(--main);
+    margin-top: 10px;
+}
+
+.feature-card p {
+    color: var(--sub);
+}
+
+/* ===== TITLE ===== */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--main);
+    text-shadow: 0 0 15px rgba(0,234,255,0.5);
+}
+
+/* ===== PRODUCT FIX ===== */
+.product__item__text *,
+.product__price {
+    color: #fff !important;
+}
+
+/* ===== DEAL ===== */
+.deal {
+    margin: 100px 0;
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0,234,255,0.1), transparent);
+    border: 1px solid rgba(0,234,255,0.3);
+}
+
+.deal h2 {
+    font-size: 2rem;
+}
+
+.countdown span {
+    font-size: 2rem;
+    margin: 0 8px;
+    color: var(--main);
+}
+
+/* ===== BLOG ===== */
+.blog {
+    padding: 80px 0;
+}
+</style>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>LAPTOP 2026</h1>
+        <p>Công nghệ mạnh mẽ - Thiết kế tương lai</p>
+        <a href="~/Shop/ProductList" class="btn-main">Mua Ngay</a>
+    </div>
+</section>
+
+<!-- FEATURE -->
+<section class="feature container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="feature-card">
+                <h3>⚡ Hiệu Năng</h3>
+                <p>CPU thế hệ mới, xử lý cực nhanh</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <h3>🎮 Gaming</h3>
+                <p>GPU mạnh mẽ, chiến mọi tựa game</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <h3>💼 Văn Phòng</h3>
+                <p>Gọn nhẹ, pin trâu</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="container">
+    <div class="section-title">
+        <h2>Sản Phẩm Nổi Bật</h2>
+    </div>
+
+    @Html.Action("ProductHome", "Home")
+</section>
+
+<!-- DEAL -->
+<section class="container">
+    <div class="deal">
+        <h2>🔥 DEAL TUẦN NÀY</h2>
+        <p>Dell XPS 15 giảm giá cực mạnh</p>
+
+        <div class="countdown">
+            <span>03</span>:
+            <span>12</span>:
+            <span>45</span>:
+            <span>20</span>
+        </div>
+
+        <a href="~/Shop/ProductList" class="btn-main">Mua Ngay</a>
+    </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog container">
+    <div class="section-title">
+        <h2>Tin Tức</h2>
+    </div>
+
+    @Html.Action("BlogHome", "Home")
+
+    <div class="text-center mt-4">
+        <a href="~/Article/ArticleList" class="btn-main">Xem Tất Cả</a>
+    </div>
+</section>

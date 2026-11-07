@@ -1,0 +1,8 @@
+C:\Users\Admin\Downloads\Lê Ngọc Thanh\Lê Ngọc Thanh\ShopOnline\obj\Debug\Lê Ngọc Thanh.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\Lê Ngọc Thanh\Lê Ngọc Thanh\ShopOnline\obj\Debug\Lê Ngọc Thanh.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\Lê Ngọc Thanh\Lê Ngọc Thanh\ShopOnline\obj\Debug\ShopOnline.dll
+C:\Users\Admin\Downloads\Lê Ngọc Thanh\Lê Ngọc Thanh\ShopOnline\obj\Debug\ShopOnline.pdb
+C:\Users\Admin\Downloads\NguyenHoangDuy\NguyenHoangDuy\ShopOnline\obj\Debug\Lê Ngọc Thanh.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\NguyenHoangDuy\NguyenHoangDuy\ShopOnline\obj\Debug\Lê Ngọc Thanh.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\NguyenHoangDuy\NguyenHoangDuy\ShopOnline\obj\Debug\ShopOnline.dll
+C:\Users\Admin\Downloads\NguyenHoangDuy\NguyenHoangDuy\ShopOnline\obj\Debug\ShopOnline.pdb

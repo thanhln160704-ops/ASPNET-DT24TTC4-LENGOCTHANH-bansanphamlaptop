@@ -1,0 +1,253 @@
+﻿@{
+    ViewBag.Title = "Giới thiệu";
+    Layout = "~/Views/Shared/_LayoutPublicPage.cshtml";
+}
+
+<style>
+    :root {
+        --bg-dark: #1e293b; 
+        --bg-card: #334155;
+        --text-main: #f8fafc;
+        --text-muted: #cbd5e1;
+        --accent: #00f0ff; 
+    }
+    
+    body, .spad, .breadcrumb-option, .about, .testimonial, .counter, .team, .clients {
+        background-color: var(--bg-dark) !important;
+        color: var(--text-main) !important;
+    }
+
+    div, section, article {
+        background-color: transparent;
+    }
+
+    /* Định dạng text sáng màu trên nền tối */
+    .breadcrumb__text h4 { color: var(--accent) !important; }
+    .breadcrumb__links a { color: var(--text-muted) !important; }
+    .breadcrumb__links a:after { color: var(--text-muted) !important; }
+    .breadcrumb__links span { color: var(--text-main) !important; }
+
+    .about__item h4 { color: var(--accent) !important; margin-bottom: 15px; }
+    .about__item p { color: var(--text-muted) !important; line-height: 1.8; }
+    
+    .testimonial { background-color: var(--bg-card) !important; }
+    .testimonial__text p { color: var(--text-main) !important; font-size: 1.2rem; font-style: italic; line-height: 1.8; }
+    .testimonial__author__text h5 { color: var(--accent) !important; margin-bottom: 5px; }
+    .testimonial__author__text p { color: var(--text-muted) !important; margin: 0; }
+    
+    .counter__item .cn_num, .counter__item strong { color: #ffffff !important; }
+    .counter__item span { color: var(--text-muted) !important; }
+    
+    .section-title span { color: var(--accent) !important; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;}
+    .section-title h2 { color: #ffffff !important; }
+    
+    .team__item { padding-bottom: 30px; }
+    .team__item h4 { color: #ffffff !important; margin-top: 20px; margin-bottom: 5px;}
+    .team__item span { color: var(--accent) !important; font-weight: 500;}
+    
+    /* Trick làm sáng logo đối tác trên nền tối */
+    .client__item img { filter: brightness(0) invert(1); opacity: 0.6; transition: all 0.3s ease; }
+    .client__item:hover img { opacity: 1; transform: scale(1.1); }
+</style>
+
+<script>
+    var obj = document.querySelector(".navlist li:nth-child(1)");
+    var obj2 = document.querySelector(".navlist li:nth-of-type(4)");
+    if(obj) obj.classList.remove("active");
+    if(obj2) obj2.classList.add("active");
+</script>
+
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Về Chúng Tôi</h4>
+                    <div class="breadcrumb__links">
+                        <a href="~/Home/Index">Trang chủ</a>
+                        <span>Giới thiệu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>Chúng tôi là ai?</h4>
+                    <p>
+                        Lê Ngọc Thanh Laptop là hệ thống bán lẻ thiết bị công nghệ uy tín hàng đầu. Chúng tôi chuyên phân phối các dòng Laptop Gaming, Ultrabook, MacBook và phụ kiện chính hãng từ các thương hiệu lớn trên thế giới.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>Sứ mệnh của chúng tôi</h4>
+                    <p>
+                        Mang đến cho người dùng những giải pháp công nghệ tối ưu nhất. Không chỉ bán máy tính, chúng tôi cung cấp trải nghiệm dịch vụ chuyên nghiệp, tư vấn tận tâm giúp bạn tìm được thiết bị hoàn hảo cho công việc và giải trí.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>Tại sao chọn chúng tôi?</h4>
+                    <p>
+                        Cam kết 100% hàng chính hãng, giá cả cực kỳ cạnh tranh, hỗ trợ trả góp 0%, và chế độ bảo hành siêu tốc. Đội ngũ kỹ thuật viên chuyên sâu luôn sẵn sàng khắc phục mọi sự cố phần cứng lẫn phần mềm 24/7.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="testimonial">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 p-0">
+                <div class="testimonial__text" style="padding: 50px 10%;">
+                    <span class="icon_quotations" style="color: var(--accent); font-size: 3rem;"></span>
+                    <p>
+                        “Tuyệt vời! Tôi đã mua một chiếc Laptop Gaming và nâng cấp RAM tại đây. Máy chạy cực kỳ mượt mà, nhân viên hỗ trợ cài đặt toàn bộ phần mềm đồ họa nặng và tối ưu hóa hệ thống. Dịch vụ bảo hành hậu mãi cũng rất nhanh chóng và chuyên nghiệp.”
+                    </p>
+                    <div class="testimonial__author mt-4">
+                        <div class="testimonial__author__pic d-inline-block align-middle mr-3">
+                            <img src="~/Content/img/about/testimonial-author.jpg" alt="" style="border-radius: 50%; width: 60px; height: 60px; border: 2px solid var(--accent);">
+                        </div>
+                        <div class="testimonial__author__text d-inline-block align-middle">
+                            <h5>Hoàng Nam</h5>
+                            <p>3D Designer & Gamer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 p-0">
+                <div class="testimonial__pic set-bg" data-setbg=@Url.Content("~/Content/img/about/testimonial-pic.jpg") style="height: 500px;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="counter spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item text-center">
+                    <div class="counter__item__number">
+                        <h2 class="cn_num d-inline">15,000</h2><strong style="font-size: 2rem;">+</strong>
+                    </div>
+                    <span>Khách Hàng <br />Tin Tưởng</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item text-center">
+                    <div class="counter__item__number">
+                        <h2 class="cn_num d-inline">30</h2><strong style="font-size: 2rem;">+</strong>
+                    </div>
+                    <span>Thương Hiệu <br />Đối Tác</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item text-center">
+                    <div class="counter__item__number">
+                        <h2 class="cn_num d-inline">12</h2>
+                    </div>
+                    <span>Chi Nhánh <br />Toàn Quốc</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item text-center">
+                    <div class="counter__item__number">
+                        <h2 class="cn_num d-inline">99</h2><strong>%</strong>
+                    </div>
+                    <span>Đánh Giá <br />Hài Lòng</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="team spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center mb-5">
+                    <span>Đội Ngũ Của Chúng Tôi</span>
+                    <h2>Gặp Gỡ Chuyên Gia Tương Lai</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="~/Content/img/about/team-1.jpg" alt="" style="border-radius: 10px;">
+                    <h4>Trần Tuấn Anh</h4>
+                    <span>Chuyên Gia Phần Cứng</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="~/Content/img/about/team-2.jpg" alt="" style="border-radius: 10px;">
+                    <h4>Lê Ngọc Thanh</h4>
+                    <span>C.E.O & Founder</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="~/Content/img/about/team-3.jpg" alt="" style="border-radius: 10px;">
+                    <h4>Lê Hoàng Quân</h4>
+                    <span>Trưởng Phòng Kỹ Thuật</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="~/Content/img/about/team-4.jpg" alt="" style="border-radius: 10px;">
+                    <h4>Phạm Trà My</h4>
+                    <span>Chăm Sóc Khách Hàng</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="clients spad" style="border-top: 1px solid #475569;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center mb-5">
+                    <span>Đối Tác Chiến Lược</span>
+                    <h2>Thương Hiệu Hàng Đầu</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center align-items-center">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
+                <a href="#" class="client__item"><img src="~/Content/img/clients/client-1.png" alt="Dell"></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
+                <a href="#" class="client__item"><img src="~/Content/img/clients/client-2.png" alt="Asus"></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
+                <a href="#" class="client__item"><img src="~/Content/img/clients/client-3.png" alt="HP"></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
+                <a href="#" class="client__item"><img src="~/Content/img/clients/client-4.png" alt="Lenovo"></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
+                <a href="#" class="client__item"><img src="~/Content/img/clients/client-5.png" alt="Acer"></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
+                <a href="#" class="client__item"><img src="~/Content/img/clients/client-6.png" alt="MSI"></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
+                <a href="#" class="client__item"><img src="~/Content/img/clients/client-7.png" alt="Apple"></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 mb-4">
+                <a href="#" class="client__item"><img src="~/Content/img/clients/client-8.png" alt="Logitech"></a>
+            </div>
+        </div>
+    </div>
+</section>

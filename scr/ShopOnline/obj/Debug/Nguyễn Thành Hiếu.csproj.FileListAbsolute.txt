@@ -1,0 +1,4 @@
+C:\Users\Admin\Downloads\E-commerce_ASPNET\E-commerce_ASPNET\Project\ShopOnline\ShopOnline\obj\Debug\Lê Ngọc Thanh.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\E-commerce_ASPNET\E-commerce_ASPNET\Project\ShopOnline\ShopOnline\obj\Debug\Lê Ngọc Thanh.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\E-commerce_ASPNET\E-commerce_ASPNET\Project\ShopOnline\ShopOnline\obj\Debug\ShopOnline.dll
+C:\Users\Admin\Downloads\E-commerce_ASPNET\E-commerce_ASPNET\Project\ShopOnline\ShopOnline\obj\Debug\ShopOnline.pdb
